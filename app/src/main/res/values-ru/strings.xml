@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Рисование</string>
+    <string name="action_settings">Настройки</string>
+    <string name="banner_ad_unit_id" >ca-app-pub-2888343178529026/2666399790</string>
+    <string name="permission_read_write" >Приложению запрещена запись на Ваше хранилище. Следовательно, оно не может функционировать должным образом. Пожалуйста, рассмотрите возможность предоставления ему этого разрешения</string>
+    <string name="select_stroke">Задайте толщину</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">Ок</string>
+
+</resources>

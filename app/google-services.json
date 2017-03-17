@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "923149912434",
+    "firebase_url": "https://draw-7942f.firebaseio.com",
+    "project_id": "draw-7942f",
+    "storage_bucket": "draw-7942f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923149912434:android:db3f4a96ce28b75d",
+        "android_client_info": {
+          "package_name": "xyz.yapapa.fromdottodot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923149912434-rkoesr3jscmuu5agc0fn41jhq8r6ep37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.yapapa.fromdottodot",
+            "certificate_hash": "4bf335741ab28cecfbc6b334cddffeb0c2fbfeb7"
+          }
+        },
+        {
+          "client_id": "923149912434-e527u9u122m5ac93hiru70icqbct342l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFV0u72DHWk4Ji0UX5nfmPQb29YPgG0RA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923149912434-e527u9u122m5ac93hiru70icqbct342l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
