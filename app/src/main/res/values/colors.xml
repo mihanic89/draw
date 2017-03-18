@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/sage</color>
-    <color name="colorPrimaryDark">@color/basil</color>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+    <color name="colorPrimary1">@color/sage</color>
+    <color name="colorPrimaryDark1">@color/basil</color>
     <color name="colorPrimary2">#3f51b5</color>
     <color name="colorPrimaryDark2">#303f9f</color>
     <color name="colorAccent">#ff4081</color>
@@ -19,5 +21,6 @@
         <item>@color/grape</item>
         <item>@color/flamingo</item>
         <item>@color/graphite</item>
+        
     </array>
 </resources>
