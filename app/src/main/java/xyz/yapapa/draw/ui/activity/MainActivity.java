@@ -13,6 +13,10 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.vansuita.pickimage.bean.PickResult;
+import com.vansuita.pickimage.bundle.PickSetup;
+import com.vansuita.pickimage.dialog.PickImageDialog;
+import com.vansuita.pickimage.listeners.IPickResult;
 
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
@@ -30,7 +34,7 @@ import xyz.yapapa.draw.ui.dialog.StrokeSelectorDialog;
 import static xyz.yapapa.draw.R.id.adView;
 
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements IPickResult
 {
 	@Bind(R.id.main_drawing_view)
 	DrawingView mDrawingView;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity
 	@Bind(R.id.main_redo_iv)    SquareImageView mRedoImageView;
     @Bind(R.id.share)           SquareImageView mShareImageView;
     @Bind(R.id.delete)          SquareImageView mDeleteImageView;
+	@Bind(R.id.image)         	SquareImageView mImageImageView;
 
 	private int mCurrentBackgroundColor;
 	private int mCurrentColor;
@@ -66,6 +71,8 @@ public class MainActivity extends AppCompatActivity
 		ButterKnife.bind(this);
 
 		initDrawingView();
+
+
 	}
 
 	@Override
@@ -210,6 +217,61 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 
+
+	protected void onImageViewClick() {
+		PickSetup setup = new PickSetup();
+
+		//super.customize(setup);
+
+		PickImageDialog.build(setup).show(this);
+
+		//If you don't have an Activity, you can set the FragmentManager
+        /*PickImageDialog.build(setup, new IPickResult() {
+            @Override
+            public void onPickResult(PickResult r) {
+                r.getBitmap();
+                r.getError();
+                r.getUri();
+            }
+        }).show(getSupportFragmentManager());*/
+
+		//For overriding the click events you can do this
+        /*PickImageDialog.build(setup).setOnClick(new IPickClick() {
+            @Override
+            public void onGalleryClick() {
+            }
+            @Override
+            public void onCameraClick() {
+            }
+        }).show(this);*/
+	}
+
+
+
+	public void onPickResult(final PickResult r) {
+		if (r.getError() == null) {
+			//If you want the Uri.
+			//Mandatory to refresh image from Uri.
+			//getImageView().setImageURI(null);
+
+			//Setting the real returned image.
+			//getImageView().setImageURI(r.getUri());
+
+			//If you want the Bitmap.
+
+			mDrawingView.DrawCustom(r.getBitmap());
+
+			//r.getPath();
+		} else {
+			//Handle possible errors
+			//TODO: do what you have to do with r.getError();
+			Toast.makeText(this, r.getError().getMessage(), Toast.LENGTH_LONG).show();
+		}
+
+
+	}
+
+
 	@OnClick(R.id.main_fill_iv)
 	public void onBackgroundFillOptionClick()
 	{
@@ -252,6 +314,12 @@ public class MainActivity extends AppCompatActivity
     {
         mDrawingView.redo();
     }
+
+	@OnClick(R.id.image)
+	public void onImageOptionClick()
+	{
+		onImageViewClick();
+	}
 
 
 

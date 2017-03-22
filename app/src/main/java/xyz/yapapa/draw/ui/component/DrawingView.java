@@ -141,6 +141,8 @@ public class DrawingView extends View
 		mDrawPaint.setColor(mPaintColor);
 	}
 
+
+
 	public void setPaintStrokeWidth(int strokeWidth)
 	{
 		mStrokeWidth = strokeWidth;
@@ -153,6 +155,26 @@ public class DrawingView extends View
 		mBackgroundPaint.setColor(mBackgroundColor);
 		invalidate();
 	}
+
+	public void DrawCustom(Bitmap b)
+	{
+
+        //Bitmap b1 = Bitmap.createScaledBitmap(b,mDrawCanvas.getWidth(),mDrawCanvas.getHeight(),false);
+        //b = Bitmap.createBitmap(mDrawCanvas.getWidth(),mDrawCanvas.getHeight(), Bitmap.Config.ARGB_8888);
+		//mDrawCanvas = new Canvas(b);
+		//mDrawCanvas.drawBitmap(b,mDrawCanvas.getWidth(),mDrawCanvas.getHeight(),null);
+
+		//mDrawCanvas.drawBitmap(b,0, 0,mDrawPaint);
+        //b.recycle();
+        //mDrawCanvas.drawCircle(300,300,200,mDrawPaint);
+        Bitmap b2= Bitmap.createBitmap(250, 250, Bitmap.Config.ARGB_8888);
+        Bitmap b1 = Bitmap.createScaledBitmap(b, mDrawCanvas.getWidth(),
+                mDrawCanvas.getHeight(),false);
+        mDrawCanvas.drawBitmap(b2,300, 300,mDrawPaint);
+
+	}
+
+
 
 	public Bitmap getBitmap()
 	{
