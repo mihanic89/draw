@@ -2,6 +2,8 @@ package xyz.yapapa.draw.ui.activity;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -31,6 +33,7 @@ import xyz.yapapa.draw.ui.component.DrawingView;
 import xyz.yapapa.draw.ui.component.SquareImageView;
 import xyz.yapapa.draw.ui.dialog.StrokeSelectorDialog;
 
+import static android.R.attr.filter;
 import static xyz.yapapa.draw.R.id.adView;
 
 
@@ -99,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 
 	private void initDrawingView()
 	{
-		mCurrentBackgroundColor = ContextCompat.getColor(this, android.R.color.white);
+		mCurrentBackgroundColor = ContextCompat.getColor(this, android.R.color.black);
 		mCurrentColor = ContextCompat.getColor(this, android.R.color.black);
 		mCurrentStroke = 10;
 
@@ -259,8 +262,11 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 
 			//If you want the Bitmap.
 
-			mDrawingView.DrawCustom(r.getBitmap());
+			//mDrawingView.DrawCustom(r.getBitmap());
+			//mDrawingView.setBackground(new BitmapDrawable(getResources(),r.getBitmap()));
 
+			Toast.makeText(this, "w="+ r.getBitmap().getWidth() + " h="+ r.getBitmap().getHeight(), Toast.LENGTH_LONG).show();
+			mDrawingView.SetCustomBitmap(r.getBitmap());
 			//r.getPath();
 		} else {
 			//Handle possible errors
