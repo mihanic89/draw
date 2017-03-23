@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "923149912434-efn2m7771ugilktpcaph37a493ad8p9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.yapapa.fromdottodot",
+            "certificate_hash": "1a87f1fcaed60d24955205d954f03c56c7e3924b"
+          }
+        },
+        {
           "client_id": "923149912434-rkoesr3jscmuu5agc0fn41jhq8r6ep37.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

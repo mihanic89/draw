@@ -6,4 +6,7 @@
     <string name="select_stroke">Select stroke</string>
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
+    <string name="choose">Choose</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
 </resources>

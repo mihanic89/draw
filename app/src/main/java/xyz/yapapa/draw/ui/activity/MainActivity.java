@@ -221,20 +221,20 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 
 	protected void onImageViewClick() {
 		PickSetup setup = new PickSetup()
-				   .setTitle("Выберите")
+				   .setTitle(getString(R.string.choose))
 				//.setTitleColor(yourColor)
 				//.setBackgroundColor(R.color.colorPrimary)
-				  .setProgressText("ОК")
+				  .setProgressText(getString(R.string.ok))
 				//.setProgressTextColor(yourColor)
-				  .setCancelText("Отмена")
+				  .setCancelText(getString(R.string.cancel))
 				//.setCancelTextColor(yourColor)
 				//.setButtonTextColor(yourColor)
 				//.setDimAmount(yourFloat)
 				//.setFlip(true)
 				//.setMaxSize(500)
 				//.setPickTypes(EPickTypes.GALLERY, EPickTypes.CAMERA)
-			     .setCameraButtonText("Камера")
-				 .setGalleryButtonText("Галерея")
+			     .setCameraButtonText(getString(R.string.camera))
+				 .setGalleryButtonText(getString(R.string.gallery))
 				  //.setIconGravity(48)
 				 .setButtonOrientation(LinearLayoutCompat.HORIZONTAL)
 				//.setSystemDialog(false)
@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 			//mDrawingView.DrawCustom(r.getBitmap());
 			//mDrawingView.setBackground(new BitmapDrawable(getResources(),r.getBitmap()));
 
-			Toast.makeText(this, "w="+ r.getBitmap().getWidth() + " h="+ r.getBitmap().getHeight(), Toast.LENGTH_LONG).show();
+			//Toast.makeText(this, "w="+ r.getBitmap().getWidth() + " h="+ r.getBitmap().getHeight(), Toast.LENGTH_LONG).show();
 			mDrawingView.SetCustomBitmap(r.getBitmap());
 			//r.getPath();
 		} else {

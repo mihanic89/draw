@@ -144,8 +144,9 @@ public class DrawingView extends View
 		mUndonePaths.clear();
 		mUndonePaints.clear();
 		mDrawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+		if (mCanvasBitmapBackground!=null){
 		mCanvasBitmapBackground.recycle();
-		mCanvasBitmapBackground=null;
+		mCanvasBitmapBackground=null;}
 		invalidate();
 	}
 
