@@ -12,8 +12,6 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import xyz.yapapa.draw.R;
-
 import static android.graphics.Bitmap.createScaledBitmap;
 
 public class DrawingView extends View
@@ -221,6 +219,7 @@ public class DrawingView extends View
 	}
 
 	public void SetCustomBitmap(Bitmap b) {
+
 
 		Boolean landscape;
 		float scale;

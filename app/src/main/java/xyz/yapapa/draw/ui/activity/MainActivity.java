@@ -2,12 +2,11 @@ package xyz.yapapa.draw.ui.activity;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -33,7 +32,6 @@ import xyz.yapapa.draw.ui.component.DrawingView;
 import xyz.yapapa.draw.ui.component.SquareImageView;
 import xyz.yapapa.draw.ui.dialog.StrokeSelectorDialog;
 
-import static android.R.attr.filter;
 import static xyz.yapapa.draw.R.id.adView;
 
 
@@ -222,8 +220,26 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 
 
 	protected void onImageViewClick() {
-		PickSetup setup = new PickSetup();
-
+		PickSetup setup = new PickSetup()
+				  .setTitle("Выберите")
+				//.setTitleColor(yourColor)
+				//.setBackgroundColor(R.color.colorPrimary)
+				  .setProgressText("ОК")
+				//.setProgressTextColor(yourColor)
+				  .setCancelText("Отмена")
+				//.setCancelTextColor(yourColor)
+				//.setButtonTextColor(yourColor)
+				//.setDimAmount(yourFloat)
+				//.setFlip(true)
+				//.setMaxSize(500)
+				//.setPickTypes(EPickTypes.GALLERY, EPickTypes.CAMERA)
+			     .setCameraButtonText("Камера")
+				 .setGalleryButtonText("Галерея")
+				//.setIconGravity(Gravity.LEFT);
+				.setButtonOrientation(LinearLayoutCompat.HORIZONTAL)
+				//.setSystemDialog(false)
+				.setGalleryIcon(R.drawable.ic_gallery)
+				.setCameraIcon(R.drawable.ic_camera);
 		//super.customize(setup);
 
 		PickImageDialog.build(setup).show(this);
