@@ -194,6 +194,8 @@ public class DrawingView extends View
 	public Bitmap getBitmap()
 	{
 		drawBackground(mDrawCanvas);
+		if (mCanvasBitmapBackground!=null)
+			drawBackgroundBitmap(mDrawCanvas);
 		drawPaths(mDrawCanvas);
 		return mCanvasBitmap;
 	}
@@ -219,6 +221,67 @@ public class DrawingView extends View
 	}
 
 	public void SetCustomBitmap(Bitmap b) {
+
+		Boolean landscape;
+		float scale;
+		Bitmap b1;
+		int x,y;
+		 if (b.getWidth()>=b.getHeight()) landscape=true;
+		else landscape=false;
+
+		if (landscape) {
+			scale = mDrawCanvas.getHeight() / b.getHeight();
+
+			float scale2;
+			if ((int) b.getWidth()*scale - mDrawCanvas.getWidth()<0)
+				scale2 = mDrawCanvas.getWidth()/( b.getWidth()*scale);
+			else scale2=1;
+
+			b1 = createScaledBitmap(b, (int) (b.getWidth()*scale*scale2), mDrawCanvas.getHeight(), false);
+
+			if (b1.getWidth()/2-mDrawCanvas.getWidth()/2<=0)
+				x=0;
+			else
+				x=b1.getWidth()/2-mDrawCanvas.getWidth()/2/2;
+
+			if (b1.getHeight()/2-mDrawCanvas.getHeight()/2<=0)
+				y=0;
+			else
+				y=b1.getHeight()/2 -mDrawCanvas.getHeight()/2;
+
+			mCanvasBitmapBackground = Bitmap.createBitmap(
+					b1,
+					x,//b1.getWidth()/2 -mDrawCanvas.getWidth()/2,
+					y,//((b1.getHeight()/2) -(mDrawCanvas.getHeight()/2)),
+					mDrawCanvas.getWidth(),
+					mDrawCanvas.getHeight());
+		}
+
+		else {
+			scale=mDrawCanvas.getWidth()/b.getWidth();
+			float scale2;
+			if ((int) b.getHeight()*scale - mDrawCanvas.getHeight()<0)
+				scale2 = mDrawCanvas.getHeight()/( b.getHeight()*scale);
+			else scale2=1;
+			b1= createScaledBitmap(b, mDrawCanvas.getWidth(), (int) (b.getHeight()*scale*scale2), false);
+
+			if (b1.getWidth()/2-mDrawCanvas.getWidth()/2<=0)
+				x=0;
+			else
+				x=b1.getWidth()/2-mDrawCanvas.getWidth()/2/2;
+
+			if (b1.getHeight()/2-mDrawCanvas.getHeight()/2<=0)
+				y=0;
+			else
+				y=b1.getHeight()/2 -mDrawCanvas.getHeight()/2;
+
+			mCanvasBitmapBackground = Bitmap.createBitmap(
+					b1,
+					x,//((b1.getWidth()/2) -(mDrawCanvas.getWidth()/2)),
+					y,
+					mDrawCanvas.getWidth(),
+					mDrawCanvas.getHeight());
+		}
 
         /*
 
@@ -251,16 +314,19 @@ public class DrawingView extends View
                     mDrawCanvas.getHeight());
         }
 
-
-        b1.recycle();
-
-        */
-
-        mCanvasBitmapBackground = Bitmap.createScaledBitmap(
+ 			mCanvasBitmapBackground = Bitmap.createScaledBitmap(
                 b,
                 mDrawCanvas.getWidth(),
                 mDrawCanvas.getHeight(),
                 true);
+
+
+
+        */
+
+
+
+		b1.recycle();
 		invalidate();
 	}
 }
