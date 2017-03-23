@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 
 	protected void onImageViewClick() {
 		PickSetup setup = new PickSetup()
-				  .setTitle("Выберите")
+				   .setTitle("Выберите")
 				//.setTitleColor(yourColor)
 				//.setBackgroundColor(R.color.colorPrimary)
 				  .setProgressText("ОК")
@@ -235,8 +235,8 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 				//.setPickTypes(EPickTypes.GALLERY, EPickTypes.CAMERA)
 			     .setCameraButtonText("Камера")
 				 .setGalleryButtonText("Галерея")
-				//.setIconGravity(Gravity.LEFT);
-				.setButtonOrientation(LinearLayoutCompat.HORIZONTAL)
+				  //.setIconGravity(48)
+				 .setButtonOrientation(LinearLayoutCompat.HORIZONTAL)
 				//.setSystemDialog(false)
 				.setGalleryIcon(R.drawable.ic_gallery)
 				.setCameraIcon(R.drawable.ic_camera);
