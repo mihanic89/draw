@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mAdView = (AdView) findViewById(adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("09D7B5315C60A80D280B8CDF618FD3DE")
+                //.addTestDevice("09D7B5315C60A80D280B8CDF618FD3DE")
                 .build();
         mAdView.loadAd(adRequest);
 
