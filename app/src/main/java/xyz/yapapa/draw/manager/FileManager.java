@@ -13,7 +13,7 @@ public class FileManager
 {
 	public static Uri saveBitmap(Bitmap bitmap)
 	{
-		String file_path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DrawingCanvas";
+		String file_path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DrawImages";
 		File dir = new File(file_path);
 
 		if(!dir.exists())

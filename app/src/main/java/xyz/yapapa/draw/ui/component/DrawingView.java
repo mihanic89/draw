@@ -3,16 +3,18 @@ package xyz.yapapa.draw.ui.component;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.ArrayList;
 
-import static android.graphics.Bitmap.createScaledBitmap;
+import static com.google.android.gms.internal.zzt.TAG;
 
 public class DrawingView extends View
 {
@@ -220,113 +222,85 @@ public class DrawingView extends View
 	}
 
 	public void SetCustomBitmap(Bitmap b) {
+		int width = b.getWidth();
+		int height = b.getHeight();
+		float scaleWidth = ((float) mDrawCanvas.getWidth()) / width;
+		float scaleHeight = ((float) mDrawCanvas.getHeight()) / height;
 
+		Matrix matrix = new Matrix();
+		matrix.postScale(scaleWidth, scaleHeight);
+
+		mCanvasBitmapBackground= Bitmap.createBitmap(b, 0, 0,
+				width, height, matrix, true);
+
+		invalidate();
+	}
+
+
+
+	public void SetCustomBitmap1(Bitmap b) {
 
 		Boolean landscape;
-		float scale;
-		Bitmap b1;
-		int x,y;
-		 if (b.getWidth()>=b.getHeight()) landscape=true;
+
+
+		if (b.getWidth()>b.getHeight()) landscape=true;
 		else landscape=false;
 
-		if (landscape) {
-			scale = mDrawCanvas.getHeight() / b.getHeight();
+		int width = b.getWidth();
+		int height = b.getHeight();
 
-			float scale2;
-			if ((int) b.getWidth()*scale - mDrawCanvas.getWidth()<0)
-				scale2 = mDrawCanvas.getWidth()/( b.getWidth()*scale);
-			else scale2=1;
 
-			b1 = createScaledBitmap(b, (int) (b.getWidth()*scale*scale2), mDrawCanvas.getHeight(), false);
 
-			if (b1.getWidth()/2-mDrawCanvas.getWidth()/2<=0)
-				x=0;
+		float scaleWidth = ((float) mDrawCanvas.getWidth()) / width;
+		float scaleHeight = ((float) mDrawCanvas.getHeight()) / height;
+
+		if (landscape)
+			{
+					scaleWidth=scaleHeight;
+
+			}
 			else
-				x=b1.getWidth()/2-mDrawCanvas.getWidth()/2/2;
+			{
 
-			if (b1.getHeight()/2-mDrawCanvas.getHeight()/2<=0)
-				y=0;
-			else
-				y=b1.getHeight()/2 -mDrawCanvas.getHeight()/2;
 
-			mCanvasBitmapBackground = Bitmap.createBitmap(
-					b1,
-					x,//b1.getWidth()/2 -mDrawCanvas.getWidth()/2,
-					y,//((b1.getHeight()/2) -(mDrawCanvas.getHeight()/2)),
-					mDrawCanvas.getWidth(),
-					mDrawCanvas.getHeight());
-		}
+					scaleWidth = scaleHeight;
 
-		else {
-			scale=mDrawCanvas.getWidth()/b.getWidth();
-			float scale2;
-			if ((int) b.getHeight()*scale - mDrawCanvas.getHeight()<0)
-				scale2 = mDrawCanvas.getHeight()/( b.getHeight()*scale);
-			else scale2=1;
-			b1= createScaledBitmap(b, mDrawCanvas.getWidth(), (int) (b.getHeight()*scale*scale2), false);
+					if (width*scaleWidth<=mDrawCanvas.getWidth()){
+						scaleWidth=((float) mDrawCanvas.getWidth()) / width;
+						scaleHeight=scaleWidth;
 
-			if (b1.getWidth()/2-mDrawCanvas.getWidth()/2<=0)
-				x=0;
-			else
-				x=b1.getWidth()/2-mDrawCanvas.getWidth()/2/2;
+					}
 
-			if (b1.getHeight()/2-mDrawCanvas.getHeight()/2<=0)
-				y=0;
-			else
-				y=b1.getHeight()/2 -mDrawCanvas.getHeight()/2;
-
-			mCanvasBitmapBackground = Bitmap.createBitmap(
-					b1,
-					x,//((b1.getWidth()/2) -(mDrawCanvas.getWidth()/2)),
-					y,
-					mDrawCanvas.getWidth(),
-					mDrawCanvas.getHeight());
-		}
-
-        /*
-
-		float scale;
-        Bitmap b1;
-
-        float x=b.getWidth()/b.getHeight();
-        float y=mDrawCanvas.getWidth()/mDrawCanvas.getHeight();
-		if (x>y)
-
-        {
-            scale = mDrawCanvas.getHeight() / b.getHeight();
-            b1 = createScaledBitmap(b, (int) (b.getWidth()*scale), mDrawCanvas.getHeight(), true);
-            mCanvasBitmapBackground = Bitmap.createBitmap(
-                    b1,
-                    ((b1.getWidth()/2) -(mDrawCanvas.getWidth()/2)),//0,
-                    0,//((b1.getHeight()/2) -(mDrawCanvas.getHeight()/2)),
-                    mDrawCanvas.getWidth(),
-                    mDrawCanvas.getHeight());
-        }
-
-		else {
-            scale = mDrawCanvas.getWidth() / b.getWidth();
-            b1= createScaledBitmap(b, mDrawCanvas.getWidth(), (int) (b.getHeight()*scale), true);
-            mCanvasBitmapBackground = Bitmap.createBitmap(
-                    b1,
-                    0,//((b1.getWidth()/2) -(mDrawCanvas.getWidth()/2)),
-                    ((b1.getHeight()/2) -(mDrawCanvas.getHeight()/2)),
-                    mDrawCanvas.getWidth(),
-                    mDrawCanvas.getHeight());
-        }
-
- 			mCanvasBitmapBackground = Bitmap.createScaledBitmap(
-                b,
-                mDrawCanvas.getWidth(),
-                mDrawCanvas.getHeight(),
-                true);
+			}
 
 
 
-        */
+		Matrix matrix = new Matrix();
+		matrix.postScale(scaleWidth, scaleHeight);
+
+		Bitmap b1= Bitmap.createBitmap(b, 0, 0,
+				width, height, matrix, true);
+
+		int width1 = b1.getWidth();
+		int height1 = b1.getHeight();
+
+		int x0=(width1/2-mDrawCanvas.getWidth()/2)-1;
+		int y0=(height1/2-mDrawCanvas.getHeight()/2)-1;
+
+		if (x0<0) x0=0;
+		if (y0<0) y0=0;
 
 
-
+		mCanvasBitmapBackground= Bitmap.createBitmap(b1, x0, y0,
+				mDrawCanvas.getWidth(), mDrawCanvas.getHeight());
 		b1.recycle();
+		Log.d(TAG, "SetCustomBwidth: " + b1.getWidth());
+		Log.d(TAG, "SetCustomBheight: "+ b1.getHeight());
+		Log.d(TAG, "SetCustomBcanwidth: " + mDrawCanvas.getWidth());
+		Log.d(TAG, "SetCustomBcanheight: "+ mDrawCanvas.getHeight());
+
+
+
 		invalidate();
 	}
 }

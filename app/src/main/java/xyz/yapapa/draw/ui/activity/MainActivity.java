@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 				//.setButtonTextColor(yourColor)
 				//.setDimAmount(yourFloat)
 				//.setFlip(true)
-				//.setMaxSize(500)
+				   .setMaxSize(400)
 				//.setPickTypes(EPickTypes.GALLERY, EPickTypes.CAMERA)
 			     .setCameraButtonText(getString(R.string.camera))
 				 .setGalleryButtonText(getString(R.string.gallery))
@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 			//mDrawingView.setBackground(new BitmapDrawable(getResources(),r.getBitmap()));
 
 			//Toast.makeText(this, "w="+ r.getBitmap().getWidth() + " h="+ r.getBitmap().getHeight(), Toast.LENGTH_LONG).show();
-			mDrawingView.SetCustomBitmap(r.getBitmap());
+			mDrawingView.SetCustomBitmap1(r.getBitmap());
 			//r.getPath();
 		} else {
 			//Handle possible errors
