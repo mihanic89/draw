@@ -47,6 +47,16 @@ public class MainActivity extends AppCompatActivity implements IPickResult
     @Bind(R.id.share)           SquareImageView mShareImageView;
     @Bind(R.id.delete)          SquareImageView mDeleteImageView;
 	@Bind(R.id.image)         	SquareImageView mImageImageView;
+	@Bind(R.id.color1)         	SquareImageView mColor1;
+	@Bind(R.id.color2)         	SquareImageView mColor2;
+	@Bind(R.id.color3)         	SquareImageView mColor3;
+	@Bind(R.id.color4)         	SquareImageView mColor4;
+	@Bind(R.id.color5)         	SquareImageView mColor5;
+	@Bind(R.id.color6)         	SquareImageView mColor6;
+	@Bind(R.id.color7)         	SquareImageView mColor7;
+	@Bind(R.id.color8)         	SquareImageView mColor8;
+	@Bind(R.id.color9)         	SquareImageView mColor9;
+
 
 	private int mCurrentBackgroundColor;
 	private int mCurrentColor;
@@ -343,11 +353,68 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 		onImageViewClick();
 	}
 
+	@OnClick(R.id.color1)
+	public void onColor1Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color1);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
+	@OnClick(R.id.color2)
+	public void onColor2Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color2);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
+	@OnClick(R.id.color3)
+	public void onColor3Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color3);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
+	@OnClick(R.id.color4)
+	public void onColor4Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color4);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
+	@OnClick(R.id.color5)
+	public void onColor5Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color5);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
+	@OnClick(R.id.color6)
+	public void onColor6Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color6);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
+
+	@OnClick(R.id.color7)
+	public void onColor7Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color7);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
+
+	@OnClick(R.id.color8)
+	public void onColor8Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color8);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
+
+	@OnClick(R.id.color9)
+	public void onColor9Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color9);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
 
 	@Override
 	public void onResume() {

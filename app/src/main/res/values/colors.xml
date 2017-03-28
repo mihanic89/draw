@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimary">#AB47BC</color>
     <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorPrimary1">@color/sage</color>
     <color name="colorPrimaryDark1">@color/basil</color>
     <color name="colorPrimary2">#3f51b5</color>
     <color name="colorPrimaryDark2">#303f9f</color>
     <color name="colorAccent">#ff4081</color>
+
+    <color name="color1">#FFF</color>
+    <color name="color2">#000</color>
+    <color name="color3">#9E9E9E</color>
+    <color name="color4">#607D8B</color>
+    <color name="color5">#F44336</color>
+    <color name="color6">#FF4081</color>
+    <color name="color7">#9C27B0</color>
+    <color name="color8">#673AB7</color>
+    <color name="color9">#3F51B5</color>
+
     <array name="palette">
+        <item>#FFF</item>
+        <item>#000</item>
+        <item>#9E9E9E</item>
+        <item>#607D8B</item>
+        <item>#F44336</item>
+        <item>#FF4081</item>
+        <item>#9C27B0</item>
+        <item>#673AB7</item>
+        <item>#3F51B5</item>
+        <item>#2196F3</item>
+        <item>#00BCD4</item>
+        <item>#009688</item>
+        <item>#4CAF50</item>
+        <item>#8BC34A</item>
+        <item>#CDDC39</item>
+        <item>#FFEB3B</item>
+        <item>#FF9800</item>
+        <item>#795548</item>
+    </array>
+
+
+    <array name="palette1">
         <item>#FFF</item>
         <item>#000</item>
         <item>@color/tomato</item>
