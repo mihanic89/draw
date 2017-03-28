@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
     @Bind(R.id.share)           SquareImageView mShareImageView;
     @Bind(R.id.delete)          SquareImageView mDeleteImageView;
 	@Bind(R.id.image)         	SquareImageView mImageImageView;
+
 	@Bind(R.id.color1)         	SquareImageView mColor1;
 	@Bind(R.id.color2)         	SquareImageView mColor2;
 	@Bind(R.id.color3)         	SquareImageView mColor3;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	@Bind(R.id.color7)         	SquareImageView mColor7;
 	@Bind(R.id.color8)         	SquareImageView mColor8;
 	@Bind(R.id.color9)         	SquareImageView mColor9;
+	@Bind(R.id.color10)         SquareImageView mColor10;
 
 
 	private int mCurrentBackgroundColor;
@@ -310,6 +312,11 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 		startFillBackgroundDialog();
 	}
 
+	@OnClick(R.id.image)
+	public void onImageOptionClick()
+	{
+		onImageViewClick();
+	}
 
 	@OnClick(R.id.main_color_iv)
 	public void onColorOptionClick()
@@ -347,11 +354,8 @@ public class MainActivity extends AppCompatActivity implements IPickResult
         mDrawingView.redo();
     }
 
-	@OnClick(R.id.image)
-	public void onImageOptionClick()
-	{
-		onImageViewClick();
-	}
+
+
 
 	@OnClick(R.id.color1)
 	public void onColor1Click()
@@ -413,6 +417,13 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	public void onColor9Click()
 	{
 		mCurrentColor = ContextCompat.getColor(this, R.color.color9);
+		mDrawingView.setPaintColor(mCurrentColor);
+	}
+
+	@OnClick(R.id.color10)
+	public void onColor10Click()
+	{
+		mCurrentColor = ContextCompat.getColor(this, R.color.color10);
 		mDrawingView.setPaintColor(mCurrentColor);
 	}
 

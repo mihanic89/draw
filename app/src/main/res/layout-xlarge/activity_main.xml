@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#FFF"
+            android:tint="@color/color1"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -41,7 +41,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#000"
+            android:tint="@color/color2"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -52,7 +52,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#9E9E9E"
+            android:tint="@color/color3"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -63,7 +63,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#607D8B"
+            android:tint="@color/color4"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -74,7 +74,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#F44336"
+            android:tint="@color/color5"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -85,7 +85,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#FF4081"
+            android:tint="@color/color6"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -96,7 +96,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#9C27B0"
+            android:tint="@color/color7"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -107,7 +107,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#673AB7"
+            android:tint="@color/color8"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -118,7 +118,7 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#3F51B5"
+            android:tint="@color/color9"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -130,21 +130,11 @@
             android:layout_weight="1"
             android:scaleType="fitXY"
             ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#3F51B5"
+            android:tint="@color/color10"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
-        <xyz.yapapa.draw.ui.component.SquareImageView
-            android:id="@+id/color11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitXY"
-            ads:srcCompat="@drawable/ic_fiber_manual_record_black_48dp"
-            android:tint="#3F51B5"
-            android:padding="@dimen/button_padding"
-            android:clickable="true"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
+
 
 
 
@@ -167,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            ads:srcCompat="@android:drawable/ic_menu_delete"
+            ads:srcCompat="@drawable/ic_delete_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -177,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            ads:srcCompat="@android:drawable/ic_menu_share"
+            ads:srcCompat="@drawable/ic_share_white_48dp"
             android:scaleType="fitXY"
             android:padding="@dimen/button_padding"
             android:clickable="true"
@@ -188,7 +178,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            ads:srcCompat="@drawable/ic_image"
+            ads:srcCompat="@drawable/ic_image_white_48dp"
             android:scaleType="fitXY"
             android:padding="@dimen/button_padding"
             android:clickable="true"
@@ -200,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            ads:srcCompat="@drawable/ic_format_color_fill_white_24dp"
+            ads:srcCompat="@drawable/ic_format_color_fill_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -211,7 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_palette_white_24dp"
+            ads:srcCompat="@drawable/ic_color_lens_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -222,7 +212,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_gesture_white_24dp"
+            ads:srcCompat="@drawable/ic_gesture_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -233,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_undo_white_24dp"
+            ads:srcCompat="@drawable/ic_undo_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -246,7 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_redo_white_24dp"
+            ads:srcCompat="@drawable/ic_redo_white_48dp"
             android:padding="@dimen/button_padding"
             android:clickable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
@@ -263,6 +253,6 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id">
+        ads:adUnitId="ca-app-pub-2888343178529026/4494446197">
     </com.google.android.gms.ads.AdView>
 </LinearLayout>

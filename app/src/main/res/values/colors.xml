@@ -8,35 +8,58 @@
     <color name="colorPrimaryDark2">#303f9f</color>
     <color name="colorAccent">#ff4081</color>
 
-    <color name="color1">#FFF</color>
-    <color name="color2">#000</color>
-    <color name="color3">#9E9E9E</color>
-    <color name="color4">#607D8B</color>
-    <color name="color5">#F44336</color>
-    <color name="color6">#FF4081</color>
-    <color name="color7">#9C27B0</color>
-    <color name="color8">#673AB7</color>
-    <color name="color9">#3F51B5</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="red">#F44336</color>
+    <color name="pink">#FF4081</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deeppurple">#673AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4CAF50</color>
+    <color name="lightgreen">#8BC34A</color>
+    <color name="lime">#CDDC39</color>
+    <color name="yellow">#FFEB3B</color>
+
+     <color name="deeporange">#FF5722</color>
+    <color name="brown">#795548</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="bluegrey">#607D8B</color>
+
+
+    <color name="color1">@color/white</color>
+    <color name="color2">@color/black</color>
+    <color name="color3">@color/grey</color>
+    <color name="color4">@color/red</color>
+    <color name="color5">@color/pink</color>
+    <color name="color6">@color/blue</color>
+    <color name="color7">@color/green</color>
+    <color name="color8">@color/yellow</color>
+    <color name="color9">@color/orange</color>
+    <color name="color10">@color/brown</color>
 
     <array name="palette">
-        <item>#FFF</item>
-        <item>#000</item>
-        <item>#9E9E9E</item>
-        <item>#607D8B</item>
-        <item>#F44336</item>
-        <item>#FF4081</item>
-        <item>#9C27B0</item>
-        <item>#673AB7</item>
-        <item>#3F51B5</item>
-        <item>#2196F3</item>
-        <item>#00BCD4</item>
-        <item>#009688</item>
-        <item>#4CAF50</item>
-        <item>#8BC34A</item>
-        <item>#CDDC39</item>
-        <item>#FFEB3B</item>
-        <item>#FF9800</item>
-        <item>#795548</item>
+        <item>@color/white</item>
+        <item>@color/black</item>
+        <item>@color/grey</item>
+        <item>@color/bluegrey</item>
+        <item>@color/red</item>
+        <item>@color/pink</item>
+        <item>@color/purple</item>
+        <item>@color/deeppurple</item>
+        <item>@color/indigo</item>
+        <item>@color/blue</item>
+        <item>@color/cyan</item>
+        <item>@color/teal</item>
+        <item>@color/green</item>
+        <item>@color/lightgreen</item>
+        <item>@color/lime</item>
+        <item>@color/yellow</item>
+        <item>@color/orange</item>
+        <item>@color/deeporange</item>
+        <item>@color/brown</item>
     </array>
 
 
