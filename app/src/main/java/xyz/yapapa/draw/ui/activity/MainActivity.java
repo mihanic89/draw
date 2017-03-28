@@ -2,6 +2,7 @@ package xyz.yapapa.draw.ui.activity;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -149,12 +150,20 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	private void startColorPickerDialog()
 	{
 		int[] colors = getResources().getIntArray(R.array.palette);
+		int size=2;
+
+		if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+			size = 1;
+		}
+		else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+			size = 1;
+		}
 
 		ColorPickerDialog dialog = ColorPickerDialog.newInstance(R.string.color_picker_default_title,
 				colors,
 				mCurrentColor,
-				5,
-				ColorPickerDialog.SIZE_SMALL);
+				4,
+				size);//ColorPickerDialog.SIZE_LARGE);
 
 		dialog.setOnColorSelectedListener(new ColorPickerSwatch.OnColorSelectedListener()
 		{
