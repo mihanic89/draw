@@ -126,11 +126,20 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	{
 		int[] colors = getResources().getIntArray(R.array.palette);
 
+		int size=2;
+
+		if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+			size = 1;
+		}
+		else if ((getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+			size = 1;
+		}
+
 		ColorPickerDialog dialog = ColorPickerDialog.newInstance(R.string.color_picker_default_title,
 				colors,
-				mCurrentBackgroundColor,
-				5,
-				ColorPickerDialog.SIZE_SMALL);
+				mCurrentColor,
+				4,
+				size);//ColorPickerDialog.SIZE_LARGE);
 
 		dialog.setOnColorSelectedListener(new ColorPickerSwatch.OnColorSelectedListener()
 		{
