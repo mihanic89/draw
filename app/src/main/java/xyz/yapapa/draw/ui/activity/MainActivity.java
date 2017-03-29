@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -266,10 +267,11 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 			     .setCameraButtonText(getString(R.string.camera))
 				 .setGalleryButtonText(getString(R.string.gallery))
 				  //.setIconGravity(48)
-				 .setButtonOrientation(LinearLayoutCompat.HORIZONTAL)
+
 				//.setSystemDialog(false)
 				.setGalleryIcon(R.drawable.ic_gallery)
-				.setCameraIcon(R.drawable.ic_camera);
+				.setCameraIcon(R.drawable.ic_camera)
+				.setButtonOrientation(LinearLayout.HORIZONTAL);
 		//super.customize(setup);
 
 		PickImageDialog.build(setup).show(this);
