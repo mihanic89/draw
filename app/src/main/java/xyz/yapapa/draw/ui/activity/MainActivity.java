@@ -220,6 +220,15 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	}
 
 
+	private void requestCameraLaunch(){
+		if (PermissionManager.checkCameraPermissions(this))
+		{
+			if (PermissionManager.checkWriteStoragePermissions(this))
+				onImageViewClick();
+			else onImageViewClick();
+		}
+		else onImageViewClick();
+	}
 
 	private void requestPermissionsAndSaveBitmap()
 	{
@@ -270,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 				 .setGalleryButtonText(getString(R.string.gallery))
 				  //.setIconGravity(48)
 
-				//.setSystemDialog(false)
+				//.setSystemDialog(true)
 				.setGalleryIcon(R.drawable.ic_gallery)
 				.setCameraIcon(R.drawable.ic_camera)
 				.setButtonOrientation(LinearLayout.HORIZONTAL);
@@ -337,7 +346,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	@OnClick(R.id.image)
 	public void onImageOptionClick()
 	{
-		onImageViewClick();
+		requestCameraLaunch();
 	}
 
 	@OnClick(R.id.main_color_iv)
