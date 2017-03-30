@@ -1,11 +1,16 @@
 package xyz.yapapa.draw.ui.activity;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.view.Menu;
@@ -23,6 +28,11 @@ import com.vansuita.pickimage.listeners.IPickResult;
 
 import org.xdty.preference.colorpicker.ColorPickerDialog;
 import org.xdty.preference.colorpicker.ColorPickerSwatch;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -68,7 +78,9 @@ public class MainActivity extends AppCompatActivity implements IPickResult
     private AdView mAdView;
     private FirebaseAnalytics mFirebaseAnalytics;
 	private static final int MAX_STROKE_WIDTH = 50;
-    int[] intDrawables ;
+	final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
+
+	int[] intDrawables ;
     int i=0;
 
 	@Override
@@ -219,17 +231,6 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 		startActivity(Intent.createChooser(intent, "Share Image"));
 	}
 
-
-	private void requestCameraLaunch(){
-		if (PermissionManager.checkCameraPermissions(this))
-		{
-			if (PermissionManager.checkWriteStoragePermissions(this))
-				onImageViewClick();
-			else onImageViewClick();
-		}
-		else onImageViewClick();
-	}
-
 	private void requestPermissionsAndSaveBitmap()
 	{
 		if (PermissionManager.checkWriteStoragePermissions(this))
@@ -238,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 			startShareDialog(uri);
 		}
 	}
+
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
@@ -257,6 +259,12 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 					Toast.makeText(this, R.string.permission_read_write, Toast.LENGTH_LONG).show();
 				}
 			}
+			break;
+
+
+
+
+
 		}
 	}
 
@@ -278,11 +286,11 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 			     .setCameraButtonText(getString(R.string.camera))
 				 .setGalleryButtonText(getString(R.string.gallery))
 				  //.setIconGravity(48)
-
+				.setButtonOrientation(LinearLayout.HORIZONTAL)
 				//.setSystemDialog(true)
-				.setGalleryIcon(R.drawable.ic_gallery)
-				.setCameraIcon(R.drawable.ic_camera)
-				.setButtonOrientation(LinearLayout.HORIZONTAL);
+				.setGalleryIcon(R.mipmap.gallery_colored)
+				.setCameraIcon(R.mipmap.camera_colored);
+
 		//super.customize(setup);
 
 		PickImageDialog.build(setup).show(this);
@@ -346,7 +354,8 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 	@OnClick(R.id.image)
 	public void onImageOptionClick()
 	{
-		requestCameraLaunch();
+
+		onImageViewClick();
 	}
 
 	@OnClick(R.id.main_color_iv)
