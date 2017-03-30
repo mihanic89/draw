@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 				} else
 				{
 					onImageViewClick();
-					Toast.makeText(this, R.string.permission_read_write, Toast.LENGTH_LONG).show();
+					//Toast.makeText(this, R.string.permission_read_write, Toast.LENGTH_LONG).show();
 				}
 			}
 			break;
