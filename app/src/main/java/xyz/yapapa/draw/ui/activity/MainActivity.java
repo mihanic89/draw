@@ -219,6 +219,8 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 		startActivity(Intent.createChooser(intent, "Share Image"));
 	}
 
+
+
 	private void requestPermissionsAndSaveBitmap()
 	{
 		if (PermissionManager.checkWriteStoragePermissions(this))
