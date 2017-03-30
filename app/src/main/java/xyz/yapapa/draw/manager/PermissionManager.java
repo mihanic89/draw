@@ -9,7 +9,7 @@ import android.support.v4.content.ContextCompat;
 public class PermissionManager
 {
 	public static final int REQUEST_WRITE_STORAGE = 112;
-
+	public static final int REQUEST_CAMERA = 99;
 
 	public static boolean checkWriteStoragePermissions(Activity activity)
 	{
@@ -22,5 +22,14 @@ public class PermissionManager
 		return hasPermission;
 	}
 
-
+	public static boolean checkCameraPermissions(Activity activity)
+	{
+		boolean hasPermission = (ContextCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED);
+		if (!hasPermission) {
+			ActivityCompat.requestPermissions(activity,
+					new String[]{Manifest.permission.CAMERA},
+					REQUEST_CAMERA);
+		}
+		return hasPermission;
+	}
 }
