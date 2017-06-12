@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements IPickResult
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mAdView = (AdView) findViewById(adView);
         AdRequest adRequest = new AdRequest.Builder()
-                //.addTestDevice("09D7B5315C60A80D280B8CDF618FD3DE")
+                .addTestDevice("09D7B5315C60A80D280B8CDF618FD3DE")
                 .build();
         mAdView.loadAd(adRequest);
 
@@ -474,27 +473,30 @@ public class MainActivity extends AppCompatActivity implements IPickResult
 		mDrawingView.setPaintColor(mCurrentColor);
 	}
 
-	@Override
-	public void onResume() {
-		super.onResume();
-
-		// Resume the AdView.
-		mAdView.resume();
-	}
-
+	/** Called when leaving the activity */
 	@Override
 	public void onPause() {
-		// Pause the AdView.
-		mAdView.pause();
-
+		if (mAdView != null) {
+			mAdView.pause();
+		}
 		super.onPause();
 	}
 
+	/** Called when returning to the activity */
+	@Override
+	public void onResume() {
+		super.onResume();
+		if (mAdView != null) {
+			mAdView.resume();
+		}
+	}
+
+	/** Called before the activity is destroyed */
 	@Override
 	public void onDestroy() {
-		// Destroy the AdView.
-		mAdView.destroy();
-
+		if (mAdView != null) {
+			mAdView.destroy();
+		}
 		super.onDestroy();
 	}
 }

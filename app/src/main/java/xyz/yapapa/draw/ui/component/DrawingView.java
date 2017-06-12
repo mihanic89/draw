@@ -14,7 +14,8 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import static com.google.android.gms.internal.zzt.TAG;
+import static android.content.ContentValues.TAG;
+//import static com.google.android.gms.internal.zzt.TAG;
 
 public class DrawingView extends View
 {
