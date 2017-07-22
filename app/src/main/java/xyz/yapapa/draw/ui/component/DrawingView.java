@@ -73,8 +73,17 @@ public class DrawingView extends View
 
 	private void drawBackgroundBitmap(Canvas canvas)
 	{
+		int width1 = mCanvasBitmapBackground.getWidth();
+		int height1 = mCanvasBitmapBackground.getHeight();
 
-		canvas.drawBitmap(mCanvasBitmapBackground,0, 0, null);
+		int x0=(mDrawCanvas.getWidth()/2- width1/2)-1;
+		int y0=(mDrawCanvas.getHeight()/2 -height1/2)-1;
+
+
+		if (x0<0) x0=0;
+		if (y0<0) y0=0;
+
+		canvas.drawBitmap(mCanvasBitmapBackground,x0, y0, null);
 	}
 	private void drawPaths(Canvas canvas)
 	{
@@ -239,7 +248,7 @@ public class DrawingView extends View
 
 
 
-	public void SetCustomBitmap1(Bitmap b) {
+	public void SetCustomBitmap2(Bitmap b) {
 
 		Boolean landscape;
 
@@ -301,6 +310,29 @@ public class DrawingView extends View
 		Log.d(TAG, "SetCustomBcanheight: "+ mDrawCanvas.getHeight());
 
 
+
+		invalidate();
+	}
+
+	public void SetCustomBitmap1(Bitmap b) {
+		int width = b.getWidth();
+		int height = b.getHeight();
+
+
+
+		float scaleWidth = ((float) this.getWidth()) / width;
+		float scaleHeight = ((float) this.getHeight()) / height;
+
+		if (scaleWidth>scaleHeight)
+		{scaleWidth=scaleHeight;}
+		else {scaleHeight=scaleWidth;}
+
+		Matrix matrix = new Matrix();
+		matrix.postScale(scaleWidth, scaleHeight);
+
+		this.mCanvasBitmapBackground= Bitmap.createBitmap(b, 0, 0,
+				width, height, matrix, true);
+		b.recycle();
 
 		invalidate();
 	}
